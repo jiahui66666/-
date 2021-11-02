@@ -1,7 +1,7 @@
 <template>
   <div>
     123456789
-    <el-button type="primary" @click="btn">主要按钮</el-button>
+    <el-button :plain="true" :loading="loading" type="primary" @click.native.prevent="btn">主要按钮</el-button>
   </div>
 </template>
 
@@ -14,16 +14,16 @@ export default {
     
     
     
-    // return {
+    return {
     //   show:true,
       
     //   //忘记密码模块
       
       
-    //   loading: false,
+      loading: false,
     //   passwordType: 'password',
     //   redirect: undefined
-    // }
+    }
   },
   // watch: {
   //   $route: {
@@ -42,15 +42,15 @@ export default {
     
     //登录
     btn() {
-                this.$message({
-              showClose: true,
-              message: '登录成功',
-              type: 'success'
-            });
+            this.$message({
+          showClose: true,
+          message: '恭喜你，这是一条成功消息',
+          type: 'success'
+        });
             this.$router.push({ path:  '/src/views/dashboard/index.vue' })
-              
+              loading: false
     },
-  }
+  },
 }
 </script>
 
